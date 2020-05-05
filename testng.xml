@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+<listener class-name="TestCases.Listeners"/>
+</listeners>
+
+  
+      
+     <test name="Validating title in the Page">
+         <classes>
+      <class name="TestCases.validateTitle"/>
+       </classes>
+      </test>
+      
+     <test name="Registration of new user">
+         <classes>
+      <class name="TestCases.Registration"/>
+       </classes>
+      </test>
+      
+      <test name="Checking login page">
+         <classes>
+      <class name="TestCases.Login"/>
+       </classes>
+      </test>
+       
+   <!-- Test -->
+</suite> <!-- Suite -->

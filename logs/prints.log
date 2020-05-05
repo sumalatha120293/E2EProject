@@ -1,0 +1,5 @@
+22:18:35.181 [main] INFO  resources.base - Driver is initialized
+22:18:42.940 [main] INFO  resources.base - Navigated to Home page
+22:19:02.138 [main] INFO  TestCases.Registration - Registration tested sucessfully
+22:19:21.821 [main] INFO  TestCases.Registration - Registration tested sucessfully
+22:19:42.209 [main] INFO  TestCases.Registration - Registration tested sucessfully
