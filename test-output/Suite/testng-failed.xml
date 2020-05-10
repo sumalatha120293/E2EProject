@@ -4,15 +4,15 @@
   <listeners>
     <listener class-name="TestCases.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Checking login page(failed)">
+  <test thread-count="5" name="Checking Wishlist page(failed)">
     <classes>
-      <class name="TestCases.Login">
+      <class name="TestCases.Addingtowishlist">
         <methods>
-          <include name="Login" invocation-numbers="1"/>
+          <include name="wishlistitems" invocation-numbers="0"/>
+          <include name="close"/>
           <include name="initialize"/>
-          <include name="teardown"/>
         </methods>
-      </class> <!-- TestCases.Login -->
+      </class> <!-- TestCases.Addingtowishlist -->
     </classes>
-  </test> <!-- Checking login page(failed) -->
+  </test> <!-- Checking Wishlist page(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -30,14 +31,8 @@ public class Login extends base{
 		 driver =initializeDriver();
 
 	}
-	@Test(dataProvider="getData")
 	
-	public void Login(String Username,String Password,String text) throws IOException
-	{
-
-		//one is inheritance
-
-		// creating object to that class and invoke methods of it
+	public void Login(String Username,String Password) {
 		driver.get(prop.getProperty("url"));
 		LoginPage lp = new LoginPage(driver);
 		lp.getMyaccount().click();
@@ -45,9 +40,82 @@ public class Login extends base{
 		lp.getEmail().sendKeys(Username);
 		lp.getPassword().sendKeys(Password);
 		lp.getLogin().click();
+		
+	}
+	
+	@DataProvider
+	public Object[][] positiveData()
+	{
+		// Row stands for how many different data types test should run
+		//coloumn stands for how many values per each test
+		
+		// Array size is 2
+		// 0,1
+		Object[][] positivedata=new Object[2][2];
+		//0th row
+		positivedata[0][0]="vsl@gmail.com";
+		positivedata[0][1]="Lp@absms4";
+		//1st row
+		positivedata[1][0]="qw1@yahoo.com";
+		positivedata[1][1]="qw2020@may";
+		
+		return positivedata;
+	
+		
+	}
+	@Test(dataProvider="positiveData",priority = 1)
+	
+	public void Login_positve(String Username,String Password) throws IOException
+	{
+
+		//one is inheritance
+
+		// creating object to that class and invoke methods of it
+		Login(Username, Password);
+		
 		String myact = driver.getTitle();
 		Assert.assertEquals(myact, "My Account");
 		
+		
+		
+		}
+	
+	@DataProvider
+	public Object[][] NegativeData()
+	{
+		// Row stands for how many different data types test should run
+		//coloumn stands for how many values per each test
+		
+		// Array size is 2
+		// 0,1
+		Object[][] data=new Object[2][2];
+		//0th row
+		data[0][0]="vsl@gmail.com";
+		data[0][1]="Lp@absms43";
+		
+		//1st row
+		data[1][0]="restricteduser@qw.com";
+		data[1][1]="456788";
+		
+		
+		return data;
+		
+		}
+	
+@Test(dataProvider="NegativeData",priority = 2)
+	
+	public void Login_negative(String Username,String Password) throws IOException
+	{
+
+		//one is inheritance
+
+		// creating object to that class and invoke methods of it
+	Login(Username, Password);
+
+		//String myact = driver.getTitle();
+		//Assert.assertEquals(myact, "My Account");
+		String invalidlogin_text =  driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).getText();
+		Assert.assertEquals(invalidlogin_text, "Warning: No match for E-Mail Address and/or Password.");
 		
 		
 		}
@@ -62,31 +130,6 @@ public class Login extends base{
 	}
 
 	
-	@DataProvider
-	public Object[][] getData()
-	{
-		// Row stands for how many different data types test should run
-		//coloumn stands for how many values per each test
-		
-		// Array size is 2
-		// 0,1
-		Object[][] data=new Object[2][3];
-		//0th row
-		data[0][0]="vsl@gmail.com";
-		data[0][1]="Lp@absms4";
-		data[0][2]="Valid User";
-		//1st row
-		data[1][0]="restricteduser@qw.com";
-		data[1][1]="456788";
-		data[1][2]= "No match for E-Mail Address and/or Password.";
-		
-		return data;
-		
-		
-		
-		
-		
-		
-	}
+
 	
 }

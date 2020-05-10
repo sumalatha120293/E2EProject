@@ -7,23 +7,35 @@
 
   
       
-     <test name="Validating title in the Page">
+     <!--  <test name="Validating title in the Page">
          <classes>
       <class name="TestCases.validateTitle"/>
        </classes>
-      </test>
+      </test>  -->
       
-     <test name="Registration of new user">
+     <!--    <test name="Registration of new user">
          <classes>
       <class name="TestCases.Registration"/>
        </classes>
-      </test>
+      </test> -->
       
-      <test name="Checking login page">
+    <!--    <test name="Checking login page">
          <classes>
       <class name="TestCases.Login"/>
        </classes>
-      </test>
+      </test> -->
+      
+    <!--   <test name="Checking Search page">
+         <classes>
+      <class name="TestCases.Search"/>
+       </classes>
+      </test> -->
+      
+     <test name="Checking Wishlist page">
+         <classes>
+      <class name="TestCases.Addingtowishlist"/>
+       </classes>
+      </test>  
        
    <!-- Test -->
 </suite> <!-- Suite -->
