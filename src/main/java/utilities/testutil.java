@@ -81,7 +81,7 @@ public class testutil {
 			 e.printStackTrace();
 		 }
 		int rowcount = reader.getRowCount("wishlistdata");
-		
+		System.out.println(rowcount);
 		for (int rownum = 2; rownum <= rowcount; rownum++) {
 			String Productname = reader.getCellData("wishlistdata", "Productname", rownum);
 			System.out.println(Productname);
@@ -91,9 +91,23 @@ public class testutil {
 			System.out.println(Addtocartfromwishlist);
 			String Removefromwishlist = reader.getCellData("wishlistdata", "Removefromwishlist", rownum);
 			System.out.println(Removefromwishlist);
+			String Quanity = reader.getCellData("wishlistdata", "Quanity", rownum);
+			System.out.println(Quanity);
+			String couponcode = reader.getCellData("wishlistdata", "couponcode", rownum);
+			System.out.println(couponcode);
+			String country = reader.getCellData("wishlistdata", "country", rownum);
+			System.out.println(country);
+			String state = reader.getCellData("wishlistdata", "state", rownum);
+			System.out.println(state);
+			String postcode = reader.getCellData("wishlistdata", "postcode", rownum);
+			System.out.println(postcode);
+			String giftcer = reader.getCellData("wishlistdata", "giftcer", rownum);
+			System.out.println(giftcer);
+			
+			
 			//reader.setCellData("Regdata", "status", rownum, "");
 			
-			Object ob[] = {Productname,wishproduct,Addtocartfromwishlist,Removefromwishlist};
+			Object ob[] = {Productname,wishproduct,Addtocartfromwishlist,Removefromwishlist,Quanity,couponcode,country,state,postcode,giftcer};
 			mydata_wishlistdata.add(ob);
 		}
 		return mydata_wishlistdata;

@@ -76,7 +76,8 @@ public Iterator<Object[]> gettestdata_wishlistdata() {
 }
 
 @Test(dataProvider = "gettestdata_wishlistdata",enabled = false)
-public void search_addtowishlist(String Productname,String wishproduct,String Addtocartfromwishlist,String Removefromwishlist) {
+public void search_addtowishlist(String Productname,String wishproduct,String Addtocartfromwishlist,String Removefromwishlist,String Quanity,String couponcode,String country,String state,String postcode,
+		String giftcer) {
 	Addingtowishlistpage wp =  new Addingtowishlistpage(driver);
 
 	wishlistpage();
@@ -123,7 +124,8 @@ public void search_addtowishlist(String Productname,String wishproduct,String Ad
 
 	
 	 @Test(dataProvider = "gettestdata_wishlistdata") 
-	 public void wishlistitems(String Productname,String wishproduct,String Addtocartfromwishlist,String Removefromwishlist) {
+	 public void wishlistitems(String Productname,String wishproduct,String Addtocartfromwishlist,String Removefromwishlist,String Quanity,String couponcode,String country,String state,String postcode,
+				String giftcer) {
 	  
 	  wishlistpage(); Addingtowishlistpage wp = new Addingtowishlistpage(driver);
 	  

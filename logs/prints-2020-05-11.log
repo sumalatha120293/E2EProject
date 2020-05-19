@@ -1,0 +1,7 @@
+12:48:54.596 [main] INFO  resources.base - entered the text in search box
+18:53:57.794 [main] INFO  resources.base - Driver is initialized
+18:54:04.863 [main] INFO  resources.base - Navigated to Home page
+18:54:22.286 [main] INFO  TestCases.Registration - Registration tested sucessfully
+18:54:38.032 [main] INFO  TestCases.Registration - Registration tested sucessfully
+18:54:58.998 [main] INFO  TestCases.Registration - Registration tested sucessfully
+18:57:29.842 [main] INFO  resources.base - entered the text in search box
